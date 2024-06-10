@@ -1,5 +1,2 @@
-CUDA_VISIBLE_DEVICES=0 python run.py /data-local/hanwen/objaverse/0/13962/campos_512_v4/00000/00000.png \
+CUDA_VISIBLE_DEVICES=0 python run.py ./assets/examples/4a2727e97a349ec8.jpg \
                                     --output-dir output_demo --render #--no-remove-bg
-
-# CUDA_VISIBLE_DEVICES=0 python run.py /data-local/hanwen/objaverse/0/13962/campos_512_v4/00000/00000.png \
-#                                     --output-dir output_demo_nobg --render --no-remove-bg
