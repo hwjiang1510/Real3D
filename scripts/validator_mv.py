@@ -54,7 +54,6 @@ def evaluation(config, loader, model, data_name,
         camera_distance = 1.8
     else:
         raise NotImplementedError
-    #camera_distance = SCALE_OBJAVERSE if config.dataset.mv_data_name == 'objaverse' else SCALE_OBJAVERSE_BOTH
     subfolder = f'val_cache_mv/{epoch}/{data_name}' if not eval else f'test_cache_mv/{epoch}/{data_name}'
 
     with torch.no_grad():

@@ -32,7 +32,7 @@ dataset:
 model:
   # use TripoSR
   pretrain_path: './checkpoint'
-  model_name: 'model_both_mvimgnet.ckpt'
+  model_name: 'model_both_trained_v1.ckpt'
   backbone_fix: False
   render_resolution: 128
   render_chunk_size: 49152 #32768 #24576 #16384

@@ -95,7 +95,7 @@ def main():
         device_num = len(device_ids)
 
     # validation dataset (single-view)
-    val_split = 'val' #if not args.eval else 'test'
+    val_split = 'val'
     val_data = train_utils.get_dataset_testing(config, split=val_split)
     val_loader = torch.utils.data.DataLoader(val_data,
                                              batch_size=config.test.batch_size, 

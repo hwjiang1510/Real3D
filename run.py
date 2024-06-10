@@ -51,13 +51,13 @@ parser.add_argument(
 )
 parser.add_argument(
     "--pretrained-model-name-or-path",
-    default="stabilityai/TripoSR",
+    default="./checkpoint", #"stabilityai/TripoSR",
     type=str,
     help="Path to the pretrained model. Could be either a huggingface model id is or a local path. Default: 'stabilityai/TripoSR'",
 )
 parser.add_argument(
     "--chunk-size",
-    default=8192,
+    default=49152, #8192,
     type=int,
     help="Evaluation chunk size for surface extraction and rendering. Smaller chunk size reduces VRAM usage but increases computation time. 0 for no chunking. Default: 8192",
 )
@@ -109,7 +109,7 @@ timer.start("Initializing model")
 model = TSR.from_pretrained(
     args.pretrained_model_name_or_path,
     config_name="config.yaml",
-    weight_name="model.ckpt",
+    weight_name="model_both_trained_v1.ckpt",
 )
 model.renderer.set_chunk_size(args.chunk_size)
 model.to(device)
