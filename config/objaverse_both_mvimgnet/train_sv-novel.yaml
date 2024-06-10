@@ -1,0 +1,71 @@
+exp_name: 'base_mvimgnet-input-views-all-losses-novel-views-constraint2-elevation-3-clip-least-similar-lr0.1x2-2'
+exp_group: 'wildLRM-objaverse-both-mvimgnetSV'
+output_dir: './output/'
+log_dir: './log'
+workers: 4
+print_freq: 100
+vis_freq: 500 #2000
+eval_vis_freq: 10
+seed: 42
+
+dataset:
+  # general settings
+  img_size: 512
+  num_frame: 4
+  use_rand_crop: False
+  img_crop_min: 128
+  img_crop_max: 384
+  white_bkg: True
+  # multiview data setting (training)
+  mv_data_name: 'objaverse_both'
+  # single-view data setting (training)
+  sv_data_use: True
+  sv_data_name: 'mvimgnet'
+  sv_render_views: 4
+  sv_render_views_sample: 'constraint2_elevation'
+  # single-view data setting (testing)
+  sv_test_data_name: 'mvimgnet'
+
+
+model:
+  # use TripoSR
+  pretrain_path: './checkpoint'
+  model_name: 'model_both.ckpt'
+  backbone_fix: False
+  render_resolution: 128
+  render_chunk_size: 49152 #32768 #24576 #16384
+  render_num_samples_per_ray: 128
+
+
+loss:
+  weight_render_rgb: 2.0
+  weight_render_mask: 1.0 #5.0 #5.0
+  weight_perceptual: 1.0  # 2
+
+
+train:
+  resume: False
+  pretrain_path: ''
+  lr: 0.00004
+  lr_embeddings: 0.00004
+  lr_backbone: 0.00004
+  beta1: 0.9  # 0.8
+  beta2: 0.96
+  eps: 0.000001
+  weight_decay: 0.05   # 0.05
+  warmup_iter: 1000
+  total_iteration: 100000
+  grad_max: 1.0
+  batch_size: 1
+  batch_size_sv: 1
+  accumulation_step: 10
+  normalize_img: False
+  use_amp: True
+  use_checkpointing: False
+  use_zeroRO: False
+
+
+test:
+  batch_size: 1
+  eval_resolution: 224
+  eval_interval: 4

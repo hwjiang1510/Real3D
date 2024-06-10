@@ -1,0 +1,7 @@
+This work trains model using both synthetic and real datasets.
+
+The synthetic dataset involves renderings of Objaverse. We use two renderings sources of Objaverse, including [Zero-1-to-3](https://zero123.cs.columbia.edu/) and [GObjaverse](https://aigc3d.github.io/gobjaverse/). The former has more diversity in sampled camera poses. The latter has better rendering quality. We use the split in GObjaverse. Please download the two renderings.
+
+The real data for self-training involves [MVImgNet](https://gaplab.cuhk.edu.cn/projects/MVImgNet/) and our collected real data. In detail, we use the first image of each MVImgNet sequence for training, which is a subset of MVImgNet. For the consideration of lisence, we are not able to provide the subset now. Please download MVImgNet and keep the subset if you have limited disk space. We will release our data soon.
+
+The data for testing involves [MVImgNet](https://gaplab.cuhk.edu.cn/projects/MVImgNet/), [CO3D](https://github.com/facebookresearch/co3d), [OmniObject3D](https://omniobject3d.github.io/) and our real data. Similarly, we use subsets of the three public datasets for evaluation. For the consideration of lisence, we are not able to provide the subset now. Please download them and keep the subset if you have limited disk space. We will release our data soon.
