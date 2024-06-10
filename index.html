@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Scaling up single-view 3D reconstruction in-the-wild">
+  <meta property="og:title" content="Real3D"/>
+  <meta property="og:description" content="Real3D"/>
+  <meta property="og:url" content="https://hwjiang1510.github.io/Real3D"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/icon.png" />
+  <meta property="og:image:width" content="600"/>
+  <meta property="og:image:height" content="600"/>
+
+
+  <meta name="twitter:title" content="Real3D">
+  <meta name="twitter:description" content="Scaling up single-view 3D reconstruction in-the-wild">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Single-view 3D reconstruction, self-training, in-the-wild">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Real3D</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Real3D: Scaling Up Large Reconstruction Models with Real-World Images</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Hanwen Jiang</a>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Qixing Huang</a>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Georgios Pavlakos</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">UT Austin</span>
+                  </div>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+			  
+			  <!-- Demo abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/hugging_face.png" alt="Hugging Face Icon" style="width: 1em; height: 1em;">
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+		<h2 class="subtitle has-text-centered">
+        <b>TLDR</b>: We scale up training data of single-view LRMs by enabling self-training on in-the-wild images.
+		<br>
+      </h2>
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/vis_real3d_compressed.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+			As single-view 3D reconstruction is ill-posed due to the ambiguity from 2D to 3D, the reconstruction models have to learn generic shape and texture priors from large data.
+            The default strategy for training single-view Large Reconstruction Models (LRMs) follows the fully supervised route, using synthetic 3D assets or multi-view captures.
+			Although these resources simplify the training procedure, they are hard to scale up beyond the existing datasets and they are not necessarily representative of the real distribution of object shapes.
+			To address these limitations, in this paper, we introduce Real3D, the first LRM system that can be trained using <b>single-view real-world images</b>.
+			Real3D introduces a novel self-training framework that can benefit from both the existing 3D/multi-view synthetic data and diverse single-view real images. 
+			We propose two unsupervised losses that allow us to supervise LRMs at the pixel- and semantic-level, even for training examples without ground-truth 3D or novel views.
+			To further improve performance and scale up the image data, we develop an automatic data curation approach to collect high-quality examples from in-the-wild images. 
+			Our experiments show that Real3D consistently outperforms prior work in four diverse evaluation settings that include real and synthetic data, as well as both in-domain and out-of-domain shapes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+            <p>
+				Real3D is trained jointly on synthetic data (fully supervised) and on single-view real images (unsupervised self-training). The former stabelizes the training with the help of supervision from ground-truth novel views. The latter introduces new information, which improves the reconstruction quality and generalization capability. A curation strategy is used to identify and leverage the high-quality training instances from the initial real image collection. We adopt the LRM model architecture.
+            </p>
+            <div class="box m-5">
+            <div class="content has-text-centered">
+                <img src="static/images/overview.png" width="100%" alt="overview" />
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Self-Training</h2>
+        <div class="content has-text-justified">
+            <p>
+				We develop novel unsupervised <b>pixel-level</b> and <b>semantic-level</b> supervision when training the model on single-view images, where ground-truth novel views are not available.
+				The pixel-level supervision (shown below) uses a <b>cycle-consistency</b> rendering loss (shown below). We found applying <i>stop-gradient</i> on intermediate renderings avoids trivial reconstruction solutions which degenerate the model.
+				Moreover, we apply a <i>pose sampling curriculum</i> during the process, adjusting the complexity of the learning target from simple to difficult during learning process.
+				The semantic-level supervision uses CLIP similarity between input image and novel views of reconstruction, involving additional regularization and hard negative mining.
+			</p>
+            <div class="box m-5">
+            <div class="content has-text-centered">
+                <img src="static/images/cycle.png" width="100%" alt="overview" />
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths"> 
+        <h2 class="title is-3">Comparison with Baselines</h2>
+        <div class="content has-text-justified">
+            <p>
+				We compare with baselines on 4 testing datasets (MVImgNet, CO3D, in-the-wild images and OmniObject3D), encompassing both real and synthetic data as well as both in-domain and out-of-domain shapes. We show visualization results below.
+			</p>
+            <div class="box m-5">
+            <video poster="" id="tree" autoplay controls muted loop height="100%">
+				<!-- Your video here -->
+				<source src="static/videos/real3d_compare1_compressed.mp4"
+				type="video/mp4">
+			  </video>
+            </div>
+			<br>
+			<p align="center">
+				We show more comparison with our base model TripoSR.
+			</p>
+			<div class="box m-5">
+            <video poster="" id="tree" autoplay controls muted loop height="100%">
+				<!-- Your video here -->
+				<source src="static/videos/compare_triposr_compressed.mp4"
+				type="video/mp4">
+			  </video>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Scaling Effect</h2>
+        <div class="content has-text-justified">
+            <p>
+				We experiment with using different ratio of real data for self-training. Real3D demonstrates better performance with using more real data for self-training, showcasing its potential for being further scaling up.
+			</p>
+            <div class="box m-5">
+            <div class="content has-text-centered">
+                <img src="static/images/scaling.png" width="100%" alt="scaling" />
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+		@article{jiang2024real3d,
+		   title={Real3D: Scaling Up Large Reconstruction Models with Real-World Images},
+		   author={Jiang, Hanwen and Huang, Qixing and Pavlakos, Georgios},
+		   booktitle={},
+		   year={2024},
+		}
+	  </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
