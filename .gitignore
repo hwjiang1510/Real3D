@@ -165,11 +165,9 @@ outputs/
 
 /output
 /wandb
-/checkpoint
+#/checkpoint
 /visualization
 /data_processing
 /process_co3d
 /dataset/preprocess/
 /dataset/split_info/mvimgnet_mv_center_info/
-
-gather_vis.ipynb

@@ -74,7 +74,7 @@ parser.add_argument(
 )
 parser.add_argument(
     "--foreground-ratio",
-    default=0.85,
+    default=0.65,
     type=float,
     help="Ratio of the foreground size to the image size. Only used when --no-remove-bg is not specified. Default: 0.85",
 )
