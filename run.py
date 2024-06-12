@@ -154,7 +154,7 @@ for i, image in enumerate(images):
 
     if args.render:
         timer.start("Rendering")
-        render_images = model.render_360(scene_codes, n_views=30, return_type="pil")
+        render_images = model.render_360(scene_codes, n_views=72, return_type="pil")
         for ri, render_image in enumerate(render_images[0]):
             render_image.save(os.path.join(output_dir, str(i), f"render_{ri:03d}.png"))
         save_video(
