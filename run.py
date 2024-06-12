@@ -96,6 +96,12 @@ parser.add_argument(
     action="store_true",
     help="If specified, save a NeRF-rendered video. Default: false",
 )
+parser.add_argument(
+    "--render-num-views",
+    default=30,
+    type=int,
+    help="Number of views to render. Default: 30",
+)
 args = parser.parse_args()
 
 output_dir = args.output_dir
@@ -154,7 +160,7 @@ for i, image in enumerate(images):
 
     if args.render:
         timer.start("Rendering")
-        render_images = model.render_360(scene_codes, n_views=72, return_type="pil")
+        render_images = model.render_360(scene_codes, n_views=args.render_num_views, return_type="pil")
         for ri, render_image in enumerate(render_images[0]):
             render_image.save(os.path.join(output_dir, str(i), f"render_{ri:03d}.png"))
         save_video(
