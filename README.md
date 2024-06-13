@@ -16,7 +16,7 @@
 
 <div align="center">
     <a href="https://hwjiang1510.github.io/Real3D/"><strong>Project Page</strong></a> |
-    <a href="https://arxiv.org/abs/"><strong>Paper</strong></a> | 
+    <a href="https://arxiv.org/abs/2406.08479"><strong>Paper</strong></a> | 
     <a href="https://huggingface.co/spaces/hwjiang/Real3D"><strong>HuggingFace Demo</strong></a>
 </div>
 
