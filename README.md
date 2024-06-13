@@ -75,8 +75,7 @@ This repo is developed based on [TripoSR](https://github.com/VAST-AI-Research/Tr
 @article{jiang2024real3d,
    title={Real3D: Scaling Up Large Reconstruction Models with Real-World Images},
    author={Jiang, Hanwen and Huang, Qixing and Pavlakos, Georgios},
-   journal={ArXiv},
+   booktitle={arXiv preprint arXiv:2406.08479},
    year={2024},
-   volume={}
 }
 ```
